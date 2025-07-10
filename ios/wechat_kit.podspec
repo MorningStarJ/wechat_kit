@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '11.0'
+  s.platform = :ios, '15.0'
 
   # s.default_subspecs = :none
   s.default_subspecs = wechat_kit_subspec, 'vendor'
@@ -47,11 +47,11 @@ Pod::Spec.new do |s|
   }
 
   s.subspec 'pay' do |sp|
-    sp.vendored_frameworks = 'Libraries/Pay/*.xcframework'
+    sp.vendored_frameworks = 'Libraries/Pay/WechatOpenSDK.xcframework'
   end
 
   s.subspec 'no_pay' do |sp|
-    sp.vendored_frameworks = 'Libraries/NoPay/*.xcframework'
+    sp.vendored_frameworks = 'Libraries/NoPay/WechatOpenSDK.xcframework'
     sp.pod_target_xcconfig = {
         'GCC_PREPROCESSOR_DEFINITIONS' => 'NO_PAY=1',
     }
